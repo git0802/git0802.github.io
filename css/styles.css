@@ -8126,10 +8126,6 @@ textarea.form-control-lg {
   --bs-text-opacity: 1;
 }
 
-.bg-img {
-  background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
-}
-
 .bg-primary {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
