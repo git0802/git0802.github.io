@@ -35,4 +35,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
       }
     });
   });
+
+  requestUserRepos()
+    .then((response) => response.json())
+    .then((data) => {
+      let ul = document.getElementById("github_name");
+
+      let li = document.createElement("h1");
+      li.innerHTML = `
+      <h1 class="masthead-heading text-uppercase mb-0">${data.name}</h1>`;
+      // Append each li to the ul
+      ul.appendChild(li);
+    });
 });
+
+function requestUserRepos() {
+  // create a variable to hold the `Promise` returned from `fetch`
+  return Promise.resolve(fetch(`https://api.github.com/user/124145401`));
+}
