@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
-import bundeAnalyzer from "@next/bundle-analyzer";
-import withMDX from "@next/mdx";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+});
 
 const nextConfig: NextConfig = {
   redirects: async () => [
@@ -19,17 +22,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 };
 
-const withBundleAnalyzer = bundeAnalyzer({
+const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
-export default withBundleAnalyzer(
-  withMDX({
-    extension: /\.mdx?$/,
-    options: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-      providerImportSource: "@mdx-js/react",
-    },
-  })(nextConfig)
-);
+export default withBundleAnalyzer(withMDX(nextConfig));
