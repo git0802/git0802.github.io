@@ -1,6 +1,0 @@
-{
-  "/(main)/page": "app/(main)/page.js",
-  "/(main)/today-i-learned/page": "app/(main)/today-i-learned/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
-}
